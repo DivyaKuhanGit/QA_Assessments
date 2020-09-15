@@ -59,6 +59,7 @@ function Countries() {
           {Boolean(selected.length) && (
             <label>
               <Select
+                name="Mark as"
                 value={marked}
                 onChange={(e) => {
                   const operation = e.target.value;
@@ -109,7 +110,7 @@ function Countries() {
             <Spinner />
           </Overlay>
         )}
-        <Table>
+        <Table name="Countries">
           <colgroup>
             <col />
             <col />

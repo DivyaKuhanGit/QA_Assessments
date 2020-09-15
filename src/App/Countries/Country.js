@@ -45,7 +45,7 @@ function Country() {
               <CountryMeta title="Name">{country.name}</CountryMeta>
               <CountryMeta title="Code">{country.code}</CountryMeta>
               <CountryMeta title="Capital">{country.capital}</CountryMeta>
-              <CountryMeta title="Contient">
+              <CountryMeta title="Continent">
                 {country.continent?.name}
               </CountryMeta>
               <CountryMeta title="Currency">{country.currency}</CountryMeta>
@@ -86,7 +86,7 @@ function Country() {
                 >
                   {isWanted ? (
                     <>
-                      <FaMapMarkerAlt /> Want to vist
+                      <FaMapMarkerAlt /> Want to visit
                     </>
                   ) : (
                     "Set as want to visit"
@@ -117,13 +117,15 @@ function Country() {
 function CountryMeta({ title, children }) {
   return (
     <Box justify="space-between" margin={[0, 0, 10, 0]}>
-      <Box>
-        <strong>{title}</strong>
-      </Box>
+      <Key>{title}</Key>
       <Box>{children}</Box>
     </Box>
   );
 }
+
+const Key = styled(Box)`
+  font-weight: bold;
+`;
 
 const VisitedButton = styled(Button)`
   width: 100%;
