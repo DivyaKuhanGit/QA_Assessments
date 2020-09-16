@@ -1,68 +1,44 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Access Fintech QA engineer Test
 
-## Available Scripts
+Hi 👋 Thanks for checking out Access Fintech's QA Engineer Test.
 
-In the project directory, you can run:
+For this challenge we would like you to create automated tests for the provided application. This could be Selenium, Cypress or whatever tooling system you like. We currently use Cypress but we're very open for you to use whatever you're comfortable with.
 
-### `yarn start`
+There are 3 sections to the application, a Home, List and Item screen. It's completely up to you whether you focus on one, two or all areas of the app, it all depends how extensive you wish to be.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You should spend between 1 and 3 hours on the test, but we don't expect everything to be complete to perfection. We're more interested in how you approach the problems, and what you would do to improve the app if it was a real application. So please make notes as you go along.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Getting started
 
-### `yarn test`
+1. Clone this repo and cd into the project
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone git@github.com:accessfintech/qa-test.git && cd qa-test
+```
 
-### `yarn build`
+2. Install dependencies
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+yarn
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+3. Run application
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+yarn start
+```
 
-### `yarn eject`
+4. Write tests! :D
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## The application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application uses an example endpoint called `countries` which uses GraphQL for you to work against. It lists countries where you as a user can set each one to be visited or want to visit, a travel checklist of sorts. You may make changes to the application's code if you need to.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Preview of application:
+![](./preview.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Submission
 
-## Learn More
+**Please do not fork or open PRs against this repository**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Instead, clone or download the contents of the repo, and push to a repo under your own GitHub account. Then email us a link to your finished solution. Feel free to include any notes you have made about what you'd do differently if this were a real application. We'll take a look, and get back to you with any feedback.
