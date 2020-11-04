@@ -5,7 +5,7 @@ import { Box } from "./Box";
 import { Button } from "./Button";
 import { THEME } from "../../constants";
 
-function NavItem({ to, children }) {
+function NavItem({ to, title, children }) {
   const { pathname } = useLocation();
   // eslint-disable-next-line no-unused-vars
   const [_, root] = pathname.split("/");
@@ -13,6 +13,7 @@ function NavItem({ to, children }) {
   return (
     <NavButtonItem
       as={Link}
+      title={title}
       to={to}
       // Match exact or descendent paths of parent (root)
       // Using transient prop `https://styled-components.com/docs/api#transient-props`

@@ -59,6 +59,7 @@ function Countries() {
           {Boolean(selected.length) && (
             <label>
               <Select
+                data-test="actions"
                 name="Mark as"
                 value={marked}
                 onChange={(e) => {
@@ -161,6 +162,7 @@ function Countries() {
               >
                 <Td onClick={(e) => e.stopPropagation()}>
                   <Input
+                    data-test="input-country"
                     type="checkbox"
                     name={`${country.name} selector`}
                     checked={selected.includes(country.code)}
@@ -183,7 +185,7 @@ function Countries() {
                 <Td>{country.currency?.split(",")[0]}</Td>
                 <Td>{country.languages.map((l) => l.name)[0]}</Td>
                 <Td align="center" onClick={(e) => e.stopPropagation()}>
-                  <label>
+                  <label data-test="input-visited">
                     <VisitedInput
                       type="checkbox"
                       name="visited"
@@ -201,7 +203,7 @@ function Countries() {
                   </label>
                 </Td>
                 <Td align="center" onClick={(e) => e.stopPropagation()}>
-                  <label>
+                  <label data-test="input-wanted">
                     <WantedInput
                       type="checkbox"
                       name="wanted"

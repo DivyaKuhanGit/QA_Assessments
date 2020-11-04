@@ -24,8 +24,12 @@ function App() {
 function Navigation() {
   return (
     <Nav>
-      <NavItem to="/">Home</NavItem>
-      <NavItem to="/countries">Countries</NavItem>
+      <NavItem to="/" title="Home">
+        Home
+      </NavItem>
+      <NavItem to="/countries" title="Countries">
+        Countries
+      </NavItem>
     </Nav>
   );
 }
@@ -41,7 +45,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0 auto;
     font-size: 14px;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   }
 
   a {

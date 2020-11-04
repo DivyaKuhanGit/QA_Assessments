@@ -25,7 +25,7 @@ function Home() {
         <h3>Dashboard</h3>
 
         <Panels>
-          <Panel>
+          <Panel id="countries-available">
             <PanelContent vertical>
               <Count justify="center" margin={[40]}>
                 {loading ? <Spinner /> : countries.length}
@@ -35,7 +35,7 @@ function Home() {
               </Box>
             </PanelContent>
           </Panel>
-          <Panel>
+          <Panel id="countries-visited">
             <PanelContent vertical>
               <Count justify="center" margin={[40]}>
                 {visited.length}
@@ -48,7 +48,7 @@ function Home() {
               )}
             </PanelContent>
           </Panel>
-          <Panel>
+          <Panel id="countries-wanted">
             <PanelContent vertical>
               <Count justify="center" margin={[40]}>
                 {wanted.length}
