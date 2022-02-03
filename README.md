@@ -10,7 +10,7 @@ You should spend between 1 and 3 hours on the test, but we don't expect everythi
 
 ## Getting started
 
-The app is hosted at the following location: https://af-qa-test.vercel.app.
+The app is hosted at the following location: http://qa-test.accessfintech.com/.
 
 You can set your tests to run against this URL, or if you want to run the app locally and add tests within the same repository:
 
