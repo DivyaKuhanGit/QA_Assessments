@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\cypress",
+    "\\cypress\\e2e",
+    "\\cypress\\support",
+    "\\cypress\\support\\pages"
   ],
+  "SelectedNode": "\\cypress\\support\\pages\\countries.page.ts",
   "PreviewInSolutionExplorer": false
 }
