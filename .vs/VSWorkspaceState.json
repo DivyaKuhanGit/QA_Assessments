@@ -3,9 +3,13 @@
     "",
     "\\cypress",
     "\\cypress\\e2e",
+    "\\cypress\\reporters",
     "\\cypress\\support",
-    "\\cypress\\support\\pages"
+    "\\cypress\\support\\pages",
+    "\\src",
+    "\\src\\App",
+    "\\src\\App\\Countries"
   ],
-  "SelectedNode": "\\cypress\\support\\pages\\countries.page.ts",
+  "SelectedNode": "\\cypress\\e2e\\qatest.cy.ts",
   "PreviewInSolutionExplorer": false
 }

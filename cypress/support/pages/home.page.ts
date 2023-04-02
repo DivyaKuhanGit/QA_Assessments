@@ -13,12 +13,14 @@ export const actions = {
     checkCountriesVisitedCount(count) {
         this.clickHomeMenuBtn();
         elements.countriesVisited().contains(count);
+        cy.should('contain', count)
         cy.log(`${count} Countries Visited!`)
         return actions;
     },
     checkCountriesWantToVisitCount(count) {
         this.clickHomeMenuBtn();
         elements.countriesToVisit().contains(count);
+        cy.should('contain',count)
         cy.log(`${count} Countries Wanted to Visit!`)
         return actions;
     },

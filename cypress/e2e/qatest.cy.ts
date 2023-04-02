@@ -1,6 +1,5 @@
 import { actions as countriesActions } from "../support/pages/countries.page"
 import { actions as homeActions } from "../support/pages/home.page"
-import { elements as countriesElements } from "../support/pages/countries.page"
 
 
 describe('Visit Countries Dashboard', () => {
@@ -8,15 +7,15 @@ describe('Visit Countries Dashboard', () => {
         cy.countriesDashBoardLogin();
     })
     it('Validate Selecting VISITED Countries in different ways and Dashboard Count', () => {
-        const Country1 = 'Thailand'
-        const Country2 = 'Afghanistan'
-        const Country3 = 'Albania'
-        countriesActions.setCountryAsVisited(Country1);     // inupt visited country by Set As Visited method
-        countriesActions.inputCountryAsVisited(Country2);   // input visited country by Mark As options Method
-        countriesActions.clickCheckVisited(Country3);       // input visited country by direct Click
+        const country1 = 'Albania'
+        const country2 = 'Afghanistan'
+        const country3 = 'Thailand'
+        countriesActions.setCountryAsVisited(country1);     // inupt visited country by Set As Visited method
+        countriesActions.inputCountryAsVisited(country2);   // input visited country by Mark As options Method
+        countriesActions.clickCheckVisited(country3);       // input visited country by direct Click
 
         //Check Countries Visited count updated in Home Dashboard.
-        homeActions.checkCountriesVisitedCount(3);
+        homeActions.checkCountriesVisitedCount(3);          // Verifies Countries visited and Count is updated in Dashboard
         homeActions.checkCountriesVisitedIsReset();         // verifies Countries Visited Count is Reseted.
     });
 
@@ -33,16 +32,20 @@ describe('Visit Countries Dashboard', () => {
         homeActions.checkCountriesWantToVisitIsReset()                  // verifies Countries Want to Visited Count is Reseted.
     });
 
+    it('validate action Button visible When countries flagged', () => {
+        const Country1 = 'Australia'
+
+        countriesActions.checkMarkAsDropDown(Country1)          //Verifies Mark As option appearance
+    })
+
     it('Validate Dashboard Count Reduction when Unselected', () => {
         const Country1 = 'Australia'
         const Country2 = 'Argentina'
 
-
         countriesActions.clickCheckVisited(Country1);
-        homeActions.checkCountriesVisitedCount(1);                      // Count Added
+        homeActions.checkCountriesVisitedCount(1);                      // verifies Count Added 
         countriesActions.clickCheckVisited(Country1);
-        homeActions.checkCountriesVisitedCount(0);                      // Count Reduced
+        homeActions.checkCountriesVisitedCount(0);                      // Verifies Count Reduced
 
-    })
-    
+    });    
 });

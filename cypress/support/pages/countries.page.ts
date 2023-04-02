@@ -9,8 +9,8 @@ export const elements = {
     setAsVisited: () => cy.get('button:contains("Set as visited")'),
     setAsWantToVisit: () => cy.get('button:contains("Set as want to visit")'),
     goBackToCountries: () => cy.get('a[href="Countries"]'),
-    goBackToCountry: () => cy.get('.fSuKMa')
-
+    goBackToCountry: () => cy.get('.fSuKMa'),
+    map: () => cy.get('#gmap_canvas')
 }
 export const actions = {
     clickCountriesMenu() {
@@ -28,14 +28,18 @@ export const actions = {
         elements.filterByCountryName().click().type(Countries.DENMARK);
         this.inputCountryAsWantedToVisit(Countries.DENMARK)
         elements.filterByCountryName().clear();
-        //this.clickCountriesMenu();
         return actions;
     },
 
     setCountryAsVisited(country) {
         this.clickCountriesMenu();
         elements.countriesTable().get('tbody>tr').contains(country).click();
+        elements.map().should('be.visible').should('not.be.undefined').then(($iframe) => {
+            const $body = $iframe.contents().find(country)
+        });
+        cy.get('h1').contains(country);
         elements.setAsVisited().click();
+        cy.should('contain',' Visited');
         this.clickGoBackToCountriesBtn();
         cy.log(`${country} has been set as VISITED Successfully!`)
         return actions;
@@ -44,7 +48,12 @@ export const actions = {
     setCountriesToVisit(country) {
         this.clickCountriesMenu();
         elements.countriesTable().get('tbody>tr').contains(country).click();
+        elements.map().should('be.visible').should('not.be.undefined').then(($iframe) => {
+            const $body = $iframe.contents().find(country)
+        });
+        cy.get('h1').contains(country);
         elements.setAsWantToVisit().click();
+        cy.should('contain',' Want to visit');
         this.clickGoBackToCountriesBtn();
         cy.log(`${country} has been set as WANT TO VISIT Successfully!`)
         return actions;
@@ -64,11 +73,11 @@ export const actions = {
     checkMarkAsDropDown(country) {
         this.clickCountriesMenu();
         elements.countriesTable().get('tbody>tr').get(`[name^='${country}'][name$='selector']`).check();
-        elements.actionBtn().should('be.visible');
-        cy.contains('Mark as').should('have.length.lt')
+        elements.actionBtn().should('be.visible')
         cy.log('Mark As dropdown is visible')
         elements.countriesTable().get('tbody>tr').get(`[name^='${country}'][name$='selector']`).uncheck();
-      // Mark As option disappeared
+        // Mark As option disappeared
+        cy.should('not.contain','Mark as')
         cy.log('Mark As dropdown is Not Visible!')
         return actions;
     },
